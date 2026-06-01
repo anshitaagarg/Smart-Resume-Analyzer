@@ -1,0 +1,20 @@
+b.tech
+btech
+bachelor
+b.e
+be
+m.tech
+mtech
+master
+phd
+doctorate
+college
+university
+computer science
+management
+school
+cgpa
+degree
+m.s
+b.s
+mba
