@@ -1,4 +1,10 @@
 import streamlit as st
+st.set_page_config(
+    page_title="AI Resume Analyser",
+    page_icon="📄",
+    layout="wide"
+)
+
 import json
 from utils.extract_experience import extract_experience
 from utils.extract_name import extract_name
@@ -10,8 +16,25 @@ from utils.extract_education import extract_education
 from utils.extract_experience import extract_experience
 from utils.resume_score import calculate_resume_score
 
-st.title("📄 AI Resume Parser")
-st.write("Upload a PDF resume and extract structured information.")
+st.sidebar.title("📄 Feature Overview")
+st.sidebar.markdown(
+    """
+    Upload a resume PDF to extract:
+    
+    -👤 Contact Information
+    
+    -🧠 Skills
+    
+    -🎓 Education
+    
+    -💼 Experience
+    
+    -📊 Resume Score
+    """
+)
+
+st.title("📄 AI Resume Analyzer")
+st.markdown("""Upload a PDF resume and extract structured information.""")
 
 uploaded_file = st.file_uploader(
     "Upload Resume",
@@ -19,9 +42,13 @@ uploaded_file = st.file_uploader(
 )
 
 if uploaded_file is not None:
+    st.markdown(
+        f"<p style='color:#4CAF50;'>✅ Uploaded: {uploaded_file.name}</p>",
+        unsafe_allow_html=True
+    )
 
     text = extract_text_from_pdf(uploaded_file)
-
+     
     email = extract_email(text)
     phone = extract_phone(text)
     name = extract_name(text)
@@ -31,31 +58,39 @@ if uploaded_file is not None:
 
     st.subheader("Contact Information")
     
-    st.success(f"👤 Name: {name}")
-    st.success(f"📧 Email: {email}")
-    st.info(f"📱 Phone: {phone}")
+    st.markdown(f"👤 **Name:** {name}")
+    st.markdown(f"📧 **Email:** {email}")
+    st.markdown(f"📱 **Phone:** {phone}")
     
-    st.subheader("Skills")
+    st.subheader("🧠 Skills")
 
     if skills:
-        skill_text = " | ".join(skills)
-        st.info(skill_text)
+        st.markdown(
+            f"<p style='color:#7DD3FC; font-size:18px;'>{' | '.join(skills)}</p>",
+            unsafe_allow_html=True
+        )
     else:
         st.warning("No skills detected")
         
     st.subheader("🎓 Education")
 
     if education:
-        education_block = "\n".join(education)
-        st.info(education_block)
+        education_block = "<br>".join(education)
+        st.markdown(
+            f"<p style='color:#7DD3FC; font-size:18px;'>{education_block}</p>",
+            unsafe_allow_html=True
+        )
     else:
         st.warning("No education information found")
     
     st.subheader("💼 Experience")
 
     if experience:
-        experience_block = "\n".join(experience)
-        st.info(experience_block)
+        experience_block = "<br>".join(experience)
+        st.markdown(
+            f"<p style='color:#7DD3FC; font-size:18px;'>{experience_block}</p>",
+            unsafe_allow_html=True
+        )
     else:
         st.warning("No experience found")
         
@@ -84,7 +119,6 @@ if uploaded_file is not None:
     )
     
     st.subheader("📊 Resume Score")
-    
     st.metric(
         label="Overall Score",
         value=f"{score}/100"
