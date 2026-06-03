@@ -1,7 +1,23 @@
 # 📄 Smart Resume Analyzer
 
-An AI-powered Resume Analyzer built using Python and Streamlit that automatically extracts key information from PDF resumes and presents it in a structured format.
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Framework-red?logo=streamlit)
+![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/Project-AI%20Internship-orange)
 
+Smart Resume Analyzer is a Python and Streamlit based application that automatically extracts and organizes key information from PDF resumes. The system identifies contact details, skills, education, and work experience, generates a resume score, and exports structured data in JSON format, helping streamline resume screening and candidate evaluation.
+
+## 🎯 Key Highlights
+
+- Upload and analyze PDF resumes
+- Extract contact information automatically
+- Detect technical skills
+- Extract education and experience sections
+- Generate resume quality score
+- Export parsed data as JSON
+- Interactive Streamlit dashboard
+  
 ## 🚀 Features
 
 * 📄 Upload PDF resumes
