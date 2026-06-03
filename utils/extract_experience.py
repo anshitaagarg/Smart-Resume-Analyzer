@@ -10,6 +10,9 @@ def extract_experience(text):
     experience_headers = [
         "EXPERIENCE",
         "WORKEXPERIENCE",
+        "RELEVANTEMPLOYMENT",
+        "RELEVANTEXPERIENCE",
+        "EMPLOYMENTHISTORY",
         "PROFESSIONALEXPERIENCE",
         "EMPLOYMENT"
     ]

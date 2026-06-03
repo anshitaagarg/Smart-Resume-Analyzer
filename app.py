@@ -1,6 +1,6 @@
 import streamlit as st
 st.set_page_config(
-    page_title="AI Resume Analyser",
+    page_title="Smart Resume Analyser",
     page_icon="📄",
     layout="wide"
 )
@@ -33,7 +33,7 @@ st.sidebar.markdown(
     """
 )
 
-st.title("📄 AI Resume Analyzer")
+st.title("📄 Smart Resume Analyzer")
 st.markdown("""Upload a PDF resume and extract structured information.""")
 
 uploaded_file = st.file_uploader(
@@ -144,3 +144,9 @@ if uploaded_file is not None:
     )
     st.subheader("📄 Parsed JSON Preview")
     st.json(parsed_data)
+
+st.divider()
+
+st.caption(
+    "Built using Python, Streamlit and NLP techniques."
+)
