@@ -88,7 +88,7 @@ ResumeParserProject/
 ### Clone the repository
 
 ```bash
-git clone https://github.com/anshitaagarg/AI-Resume-Analyzer.git
+git clone https://github.com/anshitaagarg/AI-Resume-Analyzer
 cd ResumeParserProject
 ```
 
