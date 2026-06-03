@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner.png" width="900">
+</p>
+
 # 📄 Smart Resume Analyzer
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
